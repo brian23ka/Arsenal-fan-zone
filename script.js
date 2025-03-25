@@ -67,3 +67,57 @@ fetch("fixtures.json")
         updateFixture(); // Start with the first fixture
     })
     .catch(error => console.error("Error loading fixtures:", error));
+// stats
+// stats 
+document.addEventListener("DOMContentLoaded", () => {
+    fetchPlayerStats();
+});
+
+function fetchPlayerStats() {
+    fetch("stats.json")
+        .then(response => response.json())
+        .then(data => {
+            if (!Array.isArray(data.players)) throw new Error("Unexpected data format");
+            displayStats(data.players, true); // Initially hide all stats
+        })
+        .catch(error => console.error("Error loading player stats:", error));
+}
+
+function displayStats(players, hideAll = false) {
+    const statsContainer = document.querySelector(".stats-list");
+    statsContainer.innerHTML = ""; // Clear previous content
+
+    players.forEach(player => {
+        const statElement = document.createElement("div");
+        statElement.classList.add("player-stat");
+        statElement.style.display = hideAll ? "none" : "block"; // Hide initially if specified
+        statElement.innerHTML = `
+            <h3>${player.player}</h3>
+            <p>Position: ${player.position}</p>
+            <p>Appearances: ${player.appearances}</p>
+            <p>Goals: ${player.goals}</p>
+            <p>Assists: ${player.assists}</p>
+        `;
+        statsContainer.appendChild(statElement);
+    });
+}
+
+// Implement search functionality
+document.getElementById("search-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchInput = document.getElementById("search-player").value.toLowerCase();
+
+    fetch("stats.json")
+        .then(response => response.json())
+        .then(data => {
+            const players = Array.isArray(data.players) ? data.players : [];
+            if (!Array.isArray(players)) throw new Error("Unexpected data format");
+
+            const filteredPlayers = players.filter(player => 
+                player.player.toLowerCase().includes(searchInput)
+            );
+
+            displayStats(filteredPlayers, false); // Show only the searched player
+        })
+        .catch(error => console.error("Error filtering player stats:", error));
+});
