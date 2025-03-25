@@ -213,47 +213,96 @@ select {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 /* standings */
-#standings {
-    padding: 20px;
-    background-color: #f9f9f9;
+/* General Table Styling */
+#league-standings H2{
     text-align: center;
-    margin: 20px auto;
-    width: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-#standings h2 {
-    margin-bottom: 15px;
-    color: #d10000;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
 }
 
-th, td {
+table, th, td {
+    border: 1px solid #e0e0e0;  /* Light gray border */
+}
+
+/* Header Styling */
+th {
+    background-color: #d00d25;  /* Arsenal red */
+    color: white;
+    font-weight: bold;
     padding: 12px;
-    border: 1px solid #ddd;
     text-align: center;
 }
 
-th {
-    background-color: #d10000;
-    color: white;
+/* Row Styling */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;  /* Light gray for odd rows */
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #fafafa;  /* Slightly lighter gray for even rows */
 }
 
+/* Table Cell Styling */
+td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;  /* Dark gray text color */
+}
+
+/* Highlighting Top 4 Teams (Champions League Zone) */
+tr:nth-child(-n+4) {
+    background-color: #6c51ce;  /* Red for the top 4 teams */
+    color: white;  /* White text for visibility */
+}
+/* Highlight 5th Team with Orange */
+tr:nth-child(5) {
+    background-color: #ff6600;  /* Orange */
+    color: white;
+}
+
+/* Highlight 6th Team with Green */
+tr:nth-child(6) {
+    background-color: #28a745;  /* Green */
+    color: white;
+}
+
+/* Highlight Last 3 Teams with Red */
+tr:nth-child(n+18) {
+    background-color: #e60000;  /* Red */
+    color: white;
+}
+
+tr:nth-child(-n+4) td {
+    font-weight: bold;
+}
+
+/* Hover Effect */
 tr:hover {
-    background-color: #ddd;
-    transition: 0.3s;
+    background-color: #ffcc00;  /* Arsenal yellow when hovered */
+}
+
+/* Styling the table when hovering over the top 4 teams */
+tr:nth-child(-n+4):hover {
+    background-color: #f1f1f1;  /* Light gray when hovering over top 4 */
+}
+
+/* Footer Description Styling */
+footer {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #d00d25; /* Same red color for consistency */
+}
+
+footer p {
+    font-size: 14px;
+    color: #333;
 }
 
 /* Quick Links */

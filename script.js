@@ -1,4 +1,5 @@
 // fixtures section 
+// fixtures section
 fetch("fixtures.json")
     .then(response => response.json())
     .then(data => {
@@ -26,8 +27,8 @@ fetch("fixtures.json")
                 <p>League: ${fixture.league}</p>
                 <p>Date: ${new Date(fixture.match_date).toDateString()}</p>
                 <p>Stadium: ${fixture.stadium}</p>
-                <p>Score: ${fixture.score}</p>
                 <p><strong>Countdown: <span id="countdown"></span></strong></p>
+                <p id="score" style="display:none;"><strong>Score: ${fixture.score}</strong></p> <!-- Hide score initially -->
             `;
             fixtureContainer.appendChild(fixtureItem);
 
@@ -41,6 +42,7 @@ fetch("fixtures.json")
 
                 if (timeRemaining <= 0) {
                     document.getElementById("countdown").innerText = "Match is Live!";
+                    document.getElementById("score").style.display = "block";  // Show score after countdown ends
                     setTimeout(() => {
                         currentIndex++; // Move to next fixture
                         if (currentIndex < fixtures.length) {
@@ -67,6 +69,7 @@ fetch("fixtures.json")
         updateFixture(); // Start with the first fixture
     })
     .catch(error => console.error("Error loading fixtures:", error));
+
 // stats
 // stats 
 document.addEventListener("DOMContentLoaded", () => {
@@ -121,3 +124,131 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
         })
         .catch(error => console.error("Error filtering player stats:", error));
 });
+// STANDINGS
+// Sample standings data for all 20 teams
+const standings = [
+    { "position": 1, "team": "Arsenal", "played": 30, "wins": 22, "draws": 5, "losses": 3, "points": 71 },
+    { "position": 2, "team": "Manchester City", "played": 30, "wins": 21, "draws": 6, "losses": 3, "points": 69 },
+    { "position": 3, "team": "Liverpool", "played": 30, "wins": 20, "draws": 7, "losses": 3, "points": 67 },
+    { "position": 4, "team": "Aston Villa", "played": 30, "wins": 18, "draws": 6, "losses": 6, "points": 60 },
+    { "position": 5, "team": "Tottenham Hotspur", "played": 30, "wins": 17, "draws": 6, "losses": 7, "points": 57 },
+    { "position": 6, "team": "Manchester United", "played": 30, "wins": 16, "draws": 5, "losses": 9, "points": 53 },
+    { "position": 7, "team": "Newcastle United", "played": 30, "wins": 15, "draws": 6, "losses": 9, "points": 51 },
+    { "position": 8, "team": "West Ham United", "played": 30, "wins": 14, "draws": 7, "losses": 9, "points": 49 },
+    { "position": 9, "team": "Brighton", "played": 30, "wins": 12, "draws": 9, "losses": 9, "points": 45 },
+    { "position": 10, "team": "Chelsea", "played": 30, "wins": 11, "draws": 9, "losses": 10, "points": 42 },
+    { "position": 11, "team": "Brentford", "played": 30, "wins": 10, "draws": 8, "losses": 12, "points": 38 },
+    { "position": 12, "team": "Crystal Palace", "played": 30, "wins": 9, "draws": 9, "losses": 12, "points": 36 },
+    { "position": 13, "team": "Fulham", "played": 30, "wins": 9, "draws": 8, "losses": 13, "points": 35 },
+    { "position": 14, "team": "Nottingham Forest", "played": 30, "wins": 8, "draws": 9, "losses": 13, "points": 33 },
+    { "position": 15, "team": "Bournemouth", "played": 30, "wins": 8, "draws": 8, "losses": 14, "points": 32 },
+    { "position": 16, "team": "Wolves", "played": 30, "wins": 7, "draws": 9, "losses": 14, "points": 30 },
+    { "position": 17, "team": "Everton", "played": 30, "wins": 7, "draws": 8, "losses": 15, "points": 29 },
+    { "position": 18, "team": "Luton Town", "played": 30, "wins": 6, "draws": 7, "losses": 17, "points": 25 },
+    { "position": 19, "team": "Burnley", "played": 30, "wins": 5, "draws": 6, "losses": 19, "points": 21 },
+    { "position": 20, "team": "Sheffield United", "played": 30, "wins": 4, "draws": 5, "losses": 21, "points": 17 }
+];
+
+// Function to display standings in the HTML table
+function displayStandings(standings) {
+    const standingsContainer = document.getElementById("league-standings");
+    standingsContainer.innerHTML = ''; // Clear previous table content
+
+    // Create a heading for the standings table
+    const heading = document.createElement("h2");
+    heading.innerText = "League Standings";
+    standingsContainer.appendChild(heading);  // Add the heading above the table
+
+    // Create the table header
+    const table = document.createElement("table");
+    table.innerHTML = `
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Played</th>
+                <th>Won</th>
+                <th>Drawn</th>
+                <th>Lost</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    `;
+
+    const tbody = table.querySelector("tbody");
+
+    standings.forEach(team => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${team.position}</td>
+            <td>${team.team}</td>
+            <td>${team.played}</td>
+            <td>${team.wins}</td>
+            <td>${team.draws}</td>
+            <td>${team.losses}</td>
+            <td>${team.points}</td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    standingsContainer.appendChild(table);
+}
+
+// Call the display function initially to show standings
+displayStandings(standings);
+
+// Sample fixture data (this part can be expanded based on actual fixture data)
+const fixtures = [
+    { "id": 25, "home_team": "Liverpool", "away_team": "Arsenal", "score": "2-1" },
+    { "id": 26, "home_team": "Manchester United", "away_team": "Chelsea", "score": "1-1" },
+    // More fixtures...
+];
+
+// Function to update standings after a fixture
+function updateStandingsAfterFixture(fixture) {
+    const homeTeam = standings.find(team => team.team === fixture.home_team);
+    const awayTeam = standings.find(team => team.team === fixture.away_team);
+
+    if (!homeTeam || !awayTeam) {
+        console.error("Team not found in standings");
+        return;
+    }
+
+    // Assume fixture.score is a string like "2-1" (homeGoals-awayGoals)
+    const score = fixture.score.split("-");
+    const homeGoals = parseInt(score[0], 10);
+    const awayGoals = parseInt(score[1], 10);
+
+    // Update match stats based on the result
+    if (homeGoals > awayGoals) {
+        // Home team wins
+        homeTeam.wins++;
+        homeTeam.points += 3;
+        awayTeam.losses++;
+    } else if (homeGoals < awayGoals) {
+        // Away team wins
+        awayTeam.wins++;
+        awayTeam.points += 3;
+        homeTeam.losses++;
+    } else {
+        // Draw
+        homeTeam.draws++;
+        awayTeam.draws++;
+        homeTeam.points++;
+        awayTeam.points++;
+    }
+
+    // Update played matches
+    homeTeam.played++;
+    awayTeam.played++;
+
+    // Sort standings by points and update the table
+    standings.sort((a, b) => b.points - a.points);
+    displayStandings(standings); // Re-render the standings table
+}
+
+// Example: Update standings after a fixture
+fixtures.forEach(fixture => updateStandingsAfterFixture(fixture));
