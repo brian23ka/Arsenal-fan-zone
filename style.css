@@ -278,8 +278,51 @@ tr:hover {
 .link-box:hover {
     background: #a51717;
 }
-
-
+/* footer  */
+footer{
+    background-color: #ef0107;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    /* display: flex; */
+}
+.footer-logo img{
+    height: 50px;
+    float: left;
+}
+.footer-social{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 20px;
+}
+.footer-social ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.footer-social ul li{
+    display: inline;
+}
+.footer-social a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    background-color: #8d5e5e;
+    transition: 0.5s;
+}
+.footer-social a:hover{
+    background-color: #256930;
+    color: white;
+}
+.footer-logo p{
+    cursor: pointer;
+}
+.footer-bottom{
+    margin-top: 20px;
+    cursor: pointer;
+}
 
 
 @media (max-width: 768px) {
