@@ -12,29 +12,28 @@
         <div class="logo">🔴 Arsenal Fan Zone</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Live Scores</a></li>
-            <li><a href="#">Fixtures</a></li>
-            <li><a href="#">Standings</a></li>
-            <li><a href="#">Players</a></li>
-            <li><a href="#">Chat</a></li>
+            <li><a href="#live-scores">Live Scores</a></li>
+            <li><a href="#fixtures">Fixtures</a></li>
+            <li><a href="#standings">Standings</a></li>
+            <li><a href="#players">Players</a></li>
+            <li><a href="#chat">Chat</a></li>
         </ul>
     </nav>
-    <!-- hero section -->
+    
+    <!-- Hero Section -->
     <section id="home">
         <div class="hero">
             <h1>Welcome to Arsenal Fan Zone</h1>
             <p>Stay updated with live scores, fixtures, standings, and player stats!</p>
             <a href="#live-scores" class="btn">Get started</a>
         </div>
-    <!-- upcoming highlights  -->
+    </section>
+    
+    <!-- Upcoming Highlights -->
     <section id="highlights">
         <h2>Recent Match Highlights</h2>
-        
-        <!-- Dropdown for selecting highlights -->
         <label for="highlightSelect">Choose a match:</label>
         <select id="highlightSelect"></select>
-    
-        <!-- Video Player -->
         <div class="video-container">
             <iframe id="highlightVideo" width="560" height="315" 
                 src="https://www.youtube.com/embed/DEFAULT_VIDEO" 
@@ -42,14 +41,22 @@
             </iframe>
         </div>
     </section>
-    <!--  -->
-        <div class="quick-links">
-            <a href="#live-scores" class="link-box">Live Scores</a>
-            <a href="#fixtures" class="link-box">Fixtures</a>
-            <a href="#standings" class="link-box">League Standings</a>
-            <a href="#players" class="link-box">Player Stats</a>
+    
+    <!-- Arsenal Fixtures -->
+    <section id="fixtures">
+        <h2>Upcoming Fixtures</h2>
+        <div class="fixtures-list">
+                <!-- Fixtures will be dynamically inserted here -->
         </div>
     </section>
+    
+    <div class="quick-links">
+        <a href="#live-scores" class="link-box">Live Scores</a>
+        <a href="#fixtures" class="link-box">Fixtures</a>
+        <a href="#standings" class="link-box">League Standings</a>
+        <a href="#players" class="link-box">Player Stats</a>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
