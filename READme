@@ -14,7 +14,7 @@ Welcome to the **Arsenal Fan Zone**! This is a fan-driven website dedicated to p
 
 ---
 
-## Technologies Used
+## Technologies Used 
 
 - **HTML**: Structure and layout of the website.
 - **CSS**: Styling and design, with a modern, responsive layout.
@@ -23,9 +23,40 @@ Welcome to the **Arsenal Fan Zone**! This is a fan-driven website dedicated to p
 
 ---
 
-## Installation
+## Installation ##
 
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/yourusername/arsenal-fan-zone.git
+How to Use
+View Live Scores: Go to the Live Scores section to see real-time match results.
+
+Check Upcoming Fixtures: In the Fixtures section, you can view Arsenal’s upcoming matches.
+
+Watch Highlights: Choose a match from the dropdown in the Highlights section to watch the game’s best moments.
+
+Explore Player Stats: Use the search bar in the Player Stats section to find stats for any Arsenal player.
+
+Check League Standings: The Premier League standings will be updated regularly to show how Arsenal is performing.
+
+Contribution
+Feel free to contribute to the Arsenal Fan Zone project! If you have any ideas for new features or improvements, submit a pull request or open an issue.
+
+Fork the repository.
+
+Create a branch (git checkout -b feature-name).
+
+Commit your changes (git commit -am 'Add new feature').
+
+Push to the branch (git push origin feature-name).
+
+Create a new pull request.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+Arsenal FC: For being an inspiration to all fans and providing us with the excitement we needed
+
+Bootstrap: For the awesome icons that bring some flair to the design!
