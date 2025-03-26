@@ -3,7 +3,10 @@
 Welcome to the **Arsenal Fan Zone**! This is a fan-driven website dedicated to providing Arsenal fans with everything they need to stay up-to-date with the latest matches, highlights, player stats, and more. Whether you're keeping track of match results, watching highlights, or browsing league standings, we've got you covered.
 
 ---
-
+### setup
+1.Open the live server
+2.Run this command to open json server 
+json-server --watch highlights.json --port 3000
 ## Features
 
 - **Live Scores**: Get real-time updates on Arsenal’s ongoing matches.
