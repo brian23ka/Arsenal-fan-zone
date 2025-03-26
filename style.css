@@ -111,28 +111,70 @@ body {
     background-color: #256930;
     color:beige;
 }
+/* highlight
 
-/* highlights */
-#highlights {
-    text-align: center;
-    padding: 20px;
-    background: #f4f4f4;
-}
-
-.video-container {
-    margin-top: 20px;
-}
-
-label {
-    font-size: 16px;
+/* Heading styles */
+#highlights h2 {
+    font-size: 24px;
     font-weight: bold;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Label and Select Dropdown */
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 select {
-    padding: 8px;
-    margin: 10px;
+    width: 100%;
+    padding: 10px;
     font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
 }
+
+/* Video Container */
+.video-container1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#highlightVideo{
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
+
+    #highlights h2 {
+        font-size: 20px;
+    }
+
+    select {
+        font-size: 14px;
+    }
+
+    video {
+        max-width: 100%;
+    }
+}
+
 /* Fixtures Section */
 #fixtures {
     padding: 20px;

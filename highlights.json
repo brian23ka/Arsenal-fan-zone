@@ -1,0 +1,60 @@
+{
+  "matches": [
+    {
+      "home_team": "Arsenal",
+      "away_team": "Chelsea",
+      "match_date": "2025-03-16T06:30:00Z",
+      "score": "1-0",
+      "highlight_url": "http://localhost:5500/highlights/chelsea.mp4"
+    },
+    {
+      "home_team": "Manchester United",
+      "away_team": "Arsenal",
+      "match_date": "2025-03-09T09:30:00Z",
+      "score": "1-1",
+      "highlight_url": "http://localhost:5500/highlights/manchester_united.mp4"
+    },
+    {
+      "home_team": "Arsenal",
+      "away_team": "West Ham United",
+      "match_date": "2025-02-22T07:00:00Z",
+      "score": "0-1",
+      "highlight_url": "http://localhost:5500/highlights/west_ham.mp4"
+    },
+    {
+      "home_team": "Arsenal",
+      "away_team": "Leicester City",
+      "match_date": "2025-02-15T04:30:00Z",
+      "score": "2-0",
+      "highlight_url": "http://localhost:5500/highlights/leicester.mp4"
+    },
+    {
+      "home_team": "Arsenal",
+      "away_team": "Manchester City",
+      "match_date": "2025-02-02T16:30:00Z",
+      "score": "5-1",
+      "highlight_url": "http://localhost:5500/highlights/manchester_city.mp4"
+    },
+    {
+      "home_team": "Wolverhampton Wanderers",
+      "away_team": "Arsenal",
+      "match_date": "2025-01-25T15:00:00Z",
+      "score": "0-1",
+      "highlight_url": "http://localhost:5500/highlights/wolves.mp4"
+    },
+    {
+      "home_team": "Arsenal",
+      "away_team": "Aston Villa",
+      "match_date": "2025-01-18T17:30:00Z",
+      "score": "2-2",
+      "highlight_url": "http://localhost:5500/highlights/aston_villa.mp4"
+    },
+    {
+      "home_team": "Arsenal",
+      "away_team": "Tottenham Hotspur",
+      "match_date": "2025-01-15T20:00:00Z",
+      "score": "2-1",
+      "highlight_url": "http://localhost:5500/highlights/tottenham.mp4"
+    }
+  ]
+}

@@ -1,4 +1,39 @@
-// fixtures section 
+// Fetch the highlights JSON file
+fetch('highlights.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Raw fetched data:', data);
+        const selectElement = document.getElementById('highlightSelect');
+        const videoElement = document.getElementById('highlightVideo');
+        const videoSourceElement = document.getElementById('videoSource');
+
+        // Populate the dropdown with match options
+        data.matches.forEach(match => {
+            const option = document.createElement('option');
+            option.value = match.highlight_url;
+            option.textContent = `${match.home_team} vs ${match.away_team} (${match.match_date})`;
+            selectElement.appendChild(option);
+        });
+
+        // Event listener for when a match is selected
+        selectElement.addEventListener('change', function () {
+            const selectedVideoUrl = selectElement.value;
+
+            // If the selected option is not empty, update the video source and play
+            if (selectedVideoUrl) {
+                videoSourceElement.src = selectedVideoUrl;
+                videoElement.load(); // Load the new video
+                videoElement.play().catch(error => {
+                    console.error('Error playing the video:', error);
+                });
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching the highlights data:', error);
+    });
+
+
 // fixtures section
 fetch("fixtures.json")
     .then(response => response.json())

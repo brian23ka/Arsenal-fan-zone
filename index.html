@@ -35,15 +35,23 @@
     <!-- Upcoming Highlights -->
     <section id="highlights">
         <h2>Recent Match Highlights</h2>
+        
+        <!-- Dropdown for selecting match -->
         <label for="highlightSelect">Choose a match:</label>
-        <select id="highlightSelect"></select>
-        <div class="video-container">
-            <iframe id="highlightVideo" width="560" height="315" 
-                src="https://www.youtube.com/embed/DEFAULT_VIDEO" 
-                frameborder="0" allowfullscreen>
-            </iframe>
+        <select id="highlightSelect">
+            <option value="">Select a match</option>
+        </select>
+        
+        <!-- Video container for showing the video -->
+        <div class="video-container1">
+            <video id="highlightVideo" width="560" height="315" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+        <!-- open server for code to work -->
     </section>
+    
     
     <!-- Arsenal Fixtures -->
     <section id="fixtures">
