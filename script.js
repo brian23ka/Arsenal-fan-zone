@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const musicToggle = document.getElementById("music-toggle");
+    const musicPanel = document.getElementById("music-panel");
+    const songSelect = document.getElementById("song-select");
+    const audioPlayer = document.getElementById("audio-player");
+
+    // Toggle music panel visibility
+    musicToggle.addEventListener("click", function () {
+        if (musicPanel.style.display === "block") {
+            musicPanel.style.display = "none";
+        } else {
+            musicPanel.style.display = "block";
+        }
+    });
+
+    // Play selected song
+    songSelect.addEventListener("change", function () {
+        const selectedSong = songSelect.value;
+        audioPlayer.src = `audio/${selectedSong}`; // Make sure 'audio/' folder exists
+        audioPlayer.play();
+    });
+});
+
+
+
+
+// dispaly arrangement
+
+document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section:not(.video-container, footer)");
     const exploreBtn = document.querySelector(".btn");
     const heroSection = document.querySelector(".video-container");
@@ -16,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// nav 
+// nav and nav links 
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section:not(.video-container, footer)");
     const exploreBtn = document.querySelector(".btn");
@@ -54,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setupSmoothScroll(navLinks);
     setupSmoothScroll(footerLinks);
 });
+
+
 
 // Fetch the highlights JSON file from JSON Server
 fetch('http://localhost:3000/matches')
