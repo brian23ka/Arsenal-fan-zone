@@ -16,6 +16,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// nav 
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section:not(.video-container, footer)");
+    const exploreBtn = document.querySelector(".btn");
+    const heroSection = document.querySelector(".video-container");
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const footerLinks = document.querySelectorAll(".quick-links a");
+
+    // Initially hide all sections except hero and footer
+    sections.forEach(section => section.style.display = "none");
+
+    // Show all sections and hide hero when "Explore" is clicked
+    if (exploreBtn) {
+        exploreBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            heroSection.style.display = "none";
+            sections.forEach(section => section.style.display = "block");
+        });
+    }
+
+    // Smooth scrolling for navigation and footer links
+    function setupSmoothScroll(links) {
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+    }
+
+    setupSmoothScroll(navLinks);
+    setupSmoothScroll(footerLinks);
+});
 
 // Fetch the highlights JSON file from JSON Server
 fetch('http://localhost:3000/matches')
