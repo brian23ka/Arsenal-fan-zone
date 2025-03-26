@@ -1,5 +1,5 @@
-// Fetch the highlights JSON file
-fetch('highlights.json')
+// Fetch the highlights JSON file from JSON Server
+fetch('http://localhost:3000/matches')
     .then(response => response.json())
     .then(data => {
         console.log('Raw fetched data:', data);
@@ -8,7 +8,7 @@ fetch('highlights.json')
         const videoSourceElement = document.getElementById('videoSource');
 
         // Populate the dropdown with match options
-        data.matches.forEach(match => {
+        data.forEach(match => {
             const option = document.createElement('option');
             option.value = match.highlight_url;
             option.textContent = `${match.home_team} vs ${match.away_team} (${match.match_date})`;
@@ -21,6 +21,7 @@ fetch('highlights.json')
 
             // If the selected option is not empty, update the video source and play
             if (selectedVideoUrl) {
+                videoElement.pause(); // Stop any currently playing video
                 videoSourceElement.src = selectedVideoUrl;
                 videoElement.load(); // Load the new video
                 videoElement.play().catch(error => {
@@ -32,6 +33,7 @@ fetch('highlights.json')
     .catch(error => {
         console.error('Error fetching the highlights data:', error);
     });
+
 
 
 // fixtures section
