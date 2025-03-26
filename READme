@@ -1,0 +1,74 @@
+#Arsenal Fan Zone
+Welcome to the Arsenal Fan Zone! This is a fan-driven website dedicated to providing Arsenal fans with everything they need to stay up-to-date with the latest matches, highlights, player stats, and more. Whether you're keeping track of match results, watching highlights, or browsing league standings, we've got you covered.
+
+##Features
+
+Upcoming Fixtures: Stay updated on upcoming Arsenal games.
+
+Match Highlights: Watch highlights from recent matches, including goals, key moments, and player performances.
+
+Player Stats: View individual player stats, including goals, assists, and more.
+
+League Standings: Follow Arsenal’s position in the Premier League and other key information like points, wins, and losses.
+
+##Technologies Used
+HTML: Structure and layout of the website.
+
+CSS: Styling and design, with a modern, responsive layout.
+
+JavaScript: Dynamic functionality, such as loading data, displaying highlights, and managing user interactions.
+
+API: Fetching data like live scores, player stats, and match highlights from a local server (JSON server).
+
+##Installation
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/arsenal-fan-zone.git
+Install dependencies (if any):
+
+bash
+Copy
+Edit
+npm install
+Run the app locally (for example, using VS Code Live Server or set up a local server):
+
+bash
+Copy
+Edit
+npm start
+Navigate to http://localhost:5500 to view the Arsenal Fan Zone website.
+
+##How to Use
+
+Check Upcoming Fixtures: In the Fixtures section, you can view Arsenal’s upcoming matches.
+
+Watch Highlights: Choose a match from the dropdown in the Highlights section to watch the game’s best moments.
+
+Explore Player Stats: Use the search bar in the Player Stats section to find stats for any Arsenal player.
+
+Check League Standings: The Premier League standings will be updated regularly to show how Arsenal is performing.
+
+##Contribution
+Feel free to contribute to the Arsenal Fan Zone project! If you have any ideas for new features or improvements, submit a pull request or open an issue.
+
+Fork the repository.
+
+Create a branch (git checkout -b feature-name).
+
+Commit your changes (git commit -am 'Add new feature').
+
+Push to the branch (git push origin feature-name).
+
+Create a new pull request.
+
+##License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+Arsenal FC: For being an inspiration to all fans and providing us with the excitement we need!
+
+
+Bootstrap: For the awesome icons that bring some flair to the design!
