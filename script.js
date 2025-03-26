@@ -1,3 +1,22 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section:not(.video-container, footer)");
+    const exploreBtn = document.querySelector(".btn");
+    const heroSection = document.querySelector(".video-container");
+
+    // Initially hide all sections except hero and footer
+    sections.forEach(section => section.style.display = "none");
+
+    // Show all sections and hide hero when "Explore" is clicked
+    if (exploreBtn) {
+        exploreBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            heroSection.style.display = "none";
+            sections.forEach(section => section.style.display = "block");
+        });
+    }
+});
+
+
 // Fetch the highlights JSON file from JSON Server
 fetch('http://localhost:3000/matches')
     .then(response => response.json())

@@ -20,8 +20,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: #d71920; /* Arsenal red */
-    color: white;
+    background: #fffafa; /* Arsenal red */
+    color: red;
     z-index: 1000;
 }
 
@@ -44,7 +44,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: red;
     font-weight: bold;
     padding: 10px 15px;
     transition: 0.3s;
@@ -54,6 +54,26 @@ body {
 .nav-links a:hover {
     background: #a51717; /* Darker red */
 }
+#f2{
+    text-align: center;
+    color: #d10000;
+    font-family: 'Times New Roman', Times, serif;
+}
+.hidden{
+    display: none;
+}
+/* Initially hide all sections */
+#highlights, #fixtures, #stats, #league-standings {
+    display: none;
+}
+
+/* Fade-in effect */
+.show {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+
 /* Home Section */
 #home {
     text-align: center;
@@ -334,7 +354,7 @@ tr:nth-child(-n+4):hover {
 }
 
 /* Footer Description Styling */
-footer {
+#f1{
     text-align: center;
     font-size: 16px;
     margin-top: 20px;
@@ -342,7 +362,7 @@ footer {
     color: #d00d25; /* Same red color for consistency */
 }
 
-footer p {
+#f1 p {
     font-size: 14px;
     color: #333;
 }
